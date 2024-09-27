@@ -1,6 +1,6 @@
 function importCsvToSheet() {　   //関数を定義
-  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();   //現在開いているスプレッドシートを取得し、spreadsheet変数に格納します。
-  var sheet = spreadsheet.getActiveSheet();   //取得したスプレッドシートの現在アクティブなシートを取得し、sheet変数に格納します。
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();   //現在開いているスプレッドシートを取得し、spreadsheet変数に格納。
+  var sheet = spreadsheet.getActiveSheet();   //取得したスプレッドシートの現在アクティブなシートを取得し、sheet変数に格納。
   var csvData = SpreadsheetApp.openByUrl("URL").getSheetByName("federalholidays").getDataRange().getValues();   //指定されたURLのスプレッドシートを開き、開いたスプレッドシートから、"federalholidays"という名前のシートを取得、取得したシートの全範囲を取得、全範囲のデータを2次元配列として取得し、csvData変数に格納。
   sheet.getRange(1, 1, csvData.length, csvData[0].length).setValues(csvData);   //現在のシートのA1セルから、csvDataの行数と列数分の範囲を取得、取得した範囲に、csvDataのデータを一括で書き込み。
 }
